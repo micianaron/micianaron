@@ -31,20 +31,20 @@ const pageFiles = {
 // Page-specific assets (CSS/JS) loaded on demand
 const pageAssets = {
   about: {
-    css: '../assets/styles/about.css',
-    js: '../scripts/about.js'
+    css: 'assets/styles/about.css',
+    js: 'scripts/about.js'
   },
   contact: {
-    css: '../assets/styles/contact.css'
+    css: 'assets/styles/contact.css'
   },
   partner: {
-    css: '../assets/styles/partner.css'
+    css: 'assets/styles/partner.css'
   },
   sendcontact: {
-    css: '../assets/styles/sendcontact.css'
+    css: 'assets/styles/sendcontact.css'
   },
   register: {
-    css: '../assets/styles/register.css'
+    css: 'assets/styles/register.css'
   }
 };
 
