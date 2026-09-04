@@ -10,7 +10,7 @@ function initAboutPage() {
 
 async function fetchBlogPosts() {
   try {
-    const response = await fetch('../backend/content/blog.json');  // relative from public/
+    const response = await fetch('backend/content/blog.json');
     if (!response.ok) throw new Error('Failed to load blog');
     blogPosts = await response.json();
     renderBlogCards(blogPosts);
@@ -27,17 +27,12 @@ function renderBlogCards(posts) {
 }
 
 function createBlogCard(post) {
-  const imageSrc = post.image || '../assets/images/dark-logo.png';
+  const imageSrc = post.image || 'assets/images/dark-logo.png';
   return `
     <a class="blog-card" href="${post.url}" target="_blank" rel="noopener noreferrer">
-      <div class="blog-card-image-wrapper">
-        <img src="${imageSrc}" alt="${post.title}" onerror="this.onerror=null; this.src='../assets/images/dark-logo.png'" />
-      </div>
-      <div class="blog-card-content">
-        <span class="blog-card-title">${post.title}</span>
-      </div>
-    </a>
-  `;
+      <div class="blog-card-image-wrapper"><img src="${imageSrc}" alt="${post.title}" onerror="this.onerror=null; this.src='assets/images/dark-logo.png'" /></div>
+      <div class="blog-card-content"><span class="blog-card-title">${post.title}</span></div>
+    </a>`;
 }
 
 window.initAboutPage = initAboutPage;
