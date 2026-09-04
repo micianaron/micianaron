@@ -50,7 +50,7 @@ function renderTools(tools) {
 }
 
 function createToolCard(tool) {
-  const iconUrl = tool.icon || '../assets/images/dark-logo.png';
+  const iconUrl = tool.icon || 'assets/images/dark-logo.png';
   return `
     <a class="tool-card" href="${tool.url}" target="_blank" rel="noopener noreferrer">
       <div class="tool-card-icon">
