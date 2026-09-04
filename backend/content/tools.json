@@ -1,0 +1,483 @@
+[
+  {
+    "icon": "https://globaltaxcac.onrender.com/favicon.ico",
+    "url": "https://globaltaxcac.onrender.com",
+    "title": "Global Tax Calculator",
+    "description": "Global tax calculator and financial tools for individuals and businesses."
+  },
+  {
+    "icon": "https://www.google.com/favicon.ico",
+    "url": "https://www.google.com",
+    "title": "Google",
+    "description": "Search the world's information, including webpages, images, videos and more."
+  },
+  {
+    "icon": "https://www.wikipedia.org/static/favicon/wikipedia.ico",
+    "url": "https://www.wikipedia.org",
+    "title": "Wikipedia",
+    "description": "Wikipedia is a free online encyclopedia, created and edited by volunteers around the world."
+  },
+  {
+    "icon": "https://github.com/favicon.ico",
+    "url": "https://github.com",
+    "title": "GitHub",
+    "description": "GitHub is where over 100 million developers shape the future of software, together."
+  },
+  {
+    "icon": "https://stackoverflow.com/favicon.ico",
+    "url": "https://stackoverflow.com",
+    "title": "Stack Overflow",
+    "description": "Stack Overflow is the largest, most trusted online community for developers to learn, share their programming knowledge."
+  },
+  {
+    "icon": "https://www.youtube.com/favicon.ico",
+    "url": "https://www.youtube.com",
+    "title": "YouTube",
+    "description": "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube."
+  },
+  {
+    "icon": "https://www.facebook.com/favicon.ico",
+    "url": "https://www.facebook.com",
+    "title": "Facebook",
+    "description": "Connect with friends, family and other people you know. Share photos and videos, send messages and get updates."
+  },
+  {
+    "icon": "https://twitter.com/favicon.ico",
+    "url": "https://twitter.com",
+    "title": "Twitter (X)",
+    "description": "From breaking news and entertainment to sports and politics, get the full story with all the live commentary."
+  },
+  {
+    "icon": "https://www.instagram.com/favicon.ico",
+    "url": "https://www.instagram.com",
+    "title": "Instagram",
+    "description": "Create an account or log in to Instagram - A simple, fun & creative way to capture, edit & share photos, videos & messages with friends & family."
+  },
+  {
+    "icon": "https://www.linkedin.com/favicon.ico",
+    "url": "https://www.linkedin.com",
+    "title": "LinkedIn",
+    "description": "Manage your professional identity. Build and engage with your professional network. Access knowledge, insights and opportunities."
+  },
+  {
+    "icon": "https://www.reddit.com/favicon.ico",
+    "url": "https://www.reddit.com",
+    "title": "Reddit",
+    "description": "Reddit is a network of communities based on people's interests. Find communities you're interested in, and become part of an online community!"
+  },
+  {
+    "icon": "https://www.amazon.com/favicon.ico",
+    "url": "https://www.amazon.com",
+    "title": "Amazon",
+    "description": "Free delivery on millions of items with Prime. Low prices across earth's biggest selection of books, music, DVDs, electronics, computers, software, apparel & accessories, shoes, jewelry, tools & hardware, housewares, furniture, sporting goods, beauty & personal care, groceries & just about anything else."
+  },
+  {
+    "icon": "https://www.ebay.com/favicon.ico",
+    "url": "https://www.ebay.com",
+    "title": "eBay",
+    "description": "Buy and sell electronics, cars, fashion apparel, collectibles, sporting goods, digital cameras, baby items, coupons, and everything else on eBay, the world's online marketplace."
+  },
+  {
+    "icon": "https://www.netflix.com/favicon.ico",
+    "url": "https://www.netflix.com",
+    "title": "Netflix",
+    "description": "Watch Netflix movies & TV shows online or stream right to your smart TV, game console, PC, Mac, mobile, tablet and more."
+  },
+  {
+    "icon": "https://www.spotify.com/favicon.ico",
+    "url": "https://www.spotify.com",
+    "title": "Spotify",
+    "description": "Spotify is a digital music service that gives you access to millions of songs."
+  },
+  {
+    "icon": "https://www.twitch.tv/favicon.ico",
+    "url": "https://www.twitch.tv",
+    "title": "Twitch",
+    "description": "Twitch is the world's leading video platform and community for gamers."
+  },
+  {
+    "icon": "https://www.pinterest.com/favicon.ico",
+    "url": "https://www.pinterest.com",
+    "title": "Pinterest",
+    "description": "Discover recipes, home ideas, style inspiration and other ideas to try."
+  },
+  {
+    "icon": "https://www.tumblr.com/favicon.ico",
+    "url": "https://www.tumblr.com",
+    "title": "Tumblr",
+    "description": "Tumblr is a place to express yourself, discover yourself, and bond over the stuff you love. It's where your interests connect you with your people."
+  },
+  {
+    "icon": "https://www.microsoft.com/favicon.ico",
+    "url": "https://www.microsoft.com",
+    "title": "Microsoft",
+    "description": "At Microsoft our mission and values are to help people and businesses throughout the world realize their full potential."
+  },
+  {
+    "icon": "https://www.apple.com/favicon.ico",
+    "url": "https://www.apple.com",
+    "title": "Apple",
+    "description": "Discover the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple TV, plus explore accessories, entertainment, and expert device support."
+  },
+  {
+    "icon": "https://www.adobe.com/favicon.ico",
+    "url": "https://www.adobe.com",
+    "title": "Adobe",
+    "description": "Adobe is changing the world through digital experiences. We help our customers create, deliver and optimize content and applications."
+  },
+  {
+    "icon": "https://www.mozilla.org/favicon.ico",
+    "url": "https://www.mozilla.org",
+    "title": "Mozilla",
+    "description": "Mozilla is the not-for-profit behind the lightning fast Firefox browser. We put people over profit to give everyone more power online."
+  },
+  {
+    "icon": "https://www.canva.com/favicon.ico",
+    "url": "https://www.canva.com",
+    "title": "Canva",
+    "description": "Canva makes it easy to create professional designs and to share or print them."
+  },
+  {
+    "icon": "https://www.dropbox.com/favicon.ico",
+    "url": "https://www.dropbox.com",
+    "title": "Dropbox",
+    "description": "Dropbox helps you simplify your workflow. So you can spend more time in your flow."
+  },
+  {
+    "icon": "https://slack.com/favicon.ico",
+    "url": "https://slack.com",
+    "title": "Slack",
+    "description": "Slack is a new way to communicate with your team. It's faster, better organized, and more secure than email."
+  },
+  {
+    "icon": "https://zoom.us/favicon.ico",
+    "url": "https://zoom.us",
+    "title": "Zoom",
+    "description": "Zoom is a leading platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems."
+  },
+  {
+    "icon": "https://trello.com/favicon.ico",
+    "url": "https://trello.com",
+    "title": "Trello",
+    "description": "Trello helps teams move work forward. Collaborate, manage projects, and reach new productivity peaks."
+  },
+  {
+    "icon": "https://asana.com/favicon.ico",
+    "url": "https://asana.com",
+    "title": "Asana",
+    "description": "Asana is the easiest way for teams to track their work and get results."
+  },
+  {
+    "icon": "https://www.notion.so/favicon.ico",
+    "url": "https://www.notion.so",
+    "title": "Notion",
+    "description": "Notion is a single space where you can think, write, and plan. Capture thoughts, manage projects, or even run an entire company — and do it exactly the way you want."
+  },
+  {
+    "icon": "https://www.figma.com/favicon.ico",
+    "url": "https://www.figma.com",
+    "title": "Figma",
+    "description": "Figma is a collaborative interface design tool that helps teams design and build better products."
+  },
+  {
+    "icon": "https://www.codecademy.com/favicon.ico",
+    "url": "https://www.codecademy.com",
+    "title": "Codecademy",
+    "description": "Learn the technical skills to get the job you want. Join over 50 million people choosing Codecademy to start a new career (or advance in their current one)."
+  },
+  {
+    "icon": "https://www.khanacademy.org/favicon.ico",
+    "url": "https://www.khanacademy.org",
+    "title": "Khan Academy",
+    "description": "Learn for free about math, art, computer programming, economics, physics, chemistry, biology, medicine, finance, history, and more."
+  },
+  {
+    "icon": "https://www.coursera.org/favicon.ico",
+    "url": "https://www.coursera.org",
+    "title": "Coursera",
+    "description": "Learn online and earn valuable credentials from top universities like Yale, Michigan, Stanford, and leading companies like Google and IBM."
+  },
+  {
+    "icon": "https://www.udemy.com/favicon.ico",
+    "url": "https://www.udemy.com",
+    "title": "Udemy",
+    "description": "Udemy is an online learning and teaching marketplace with over 213,000 courses and 62 million students. Learn programming, marketing, data science and more."
+  },
+  {
+    "icon": "https://www.edx.org/favicon.ico",
+    "url": "https://www.edx.org",
+    "title": "edX",
+    "description": "Access 2000 free online courses from 140 leading institutions worldwide. Gain new skills and earn a certificate of completion."
+  },
+  {
+    "icon": "https://www.duolingo.com/favicon.ico",
+    "url": "https://www.duolingo.com",
+    "title": "Duolingo",
+    "description": "Learn a language for free. Forever."
+  },
+  {
+    "icon": "https://www.bbc.com/favicon.ico",
+    "url": "https://www.bbc.com",
+    "title": "BBC",
+    "description": "Visit BBC for trusted reporting on the latest world and US news, sports, business, climate, innovation, culture and much more."
+  },
+  {
+    "icon": "https://www.cnn.com/favicon.ico",
+    "url": "https://www.cnn.com",
+    "title": "CNN",
+    "description": "View the latest news and breaking news today for U.S., world, weather, entertainment, politics and health at CNN.com."
+  },
+  {
+    "icon": "https://www.nytimes.com/favicon.ico",
+    "url": "https://www.nytimes.com",
+    "title": "The New York Times",
+    "description": "The New York Times seeks the truth and helps people understand the world. With 1,700 journalists reporting from more than 160 countries, we provide live updates, investigations, photos and video."
+  },
+  {
+    "icon": "https://www.theguardian.com/favicon.ico",
+    "url": "https://www.theguardian.com",
+    "title": "The Guardian",
+    "description": "Latest international news, sport and comment from the Guardian, the world's leading liberal voice."
+  },
+  {
+    "icon": "https://www.reuters.com/favicon.ico",
+    "url": "https://www.reuters.com",
+    "title": "Reuters",
+    "description": "Reuters provides trusted business, financial, national and international news to professionals via desktop terminals, the world's media organizations, industry events and directly to consumers."
+  },
+  {
+    "icon": "https://www.bloomberg.com/favicon.ico",
+    "url": "https://www.bloomberg.com",
+    "title": "Bloomberg",
+    "description": "Bloomberg delivers business and markets news, data, analysis, and video to the world, featuring stories from Businessweek and Bloomberg News."
+  },
+  {
+    "icon": "https://www.espn.com/favicon.ico",
+    "url": "https://www.espn.com",
+    "title": "ESPN",
+    "description": "Visit ESPN for live scores, highlights and sports news. Stream exclusive games on ESPN+ and play fantasy sports."
+  },
+  {
+    "icon": "https://www.imdb.com/favicon.ico",
+    "url": "https://www.imdb.com",
+    "title": "IMDb",
+    "description": "IMDb is the world's most popular and authoritative source for movie, TV and celebrity content. Find ratings and reviews for the newest movie and TV shows."
+  },
+  {
+    "icon": "https://www.rottentomatoes.com/favicon.ico",
+    "url": "https://www.rottentomatoes.com",
+    "title": "Rotten Tomatoes",
+    "description": "Rotten Tomatoes, home of the Tomatometer, is the most trusted measurement of quality for Movies & TV. The definitive site for Reviews, Trailers, Showtimes, and Tickets."
+  },
+  {
+    "icon": "https://www.goodreads.com/favicon.ico",
+    "url": "https://www.goodreads.com",
+    "title": "Goodreads",
+    "description": "Discover and share books you love on Goodreads, the world's largest site for readers and book recommendations."
+  },
+  {
+    "icon": "https://www.tripadvisor.com/favicon.ico",
+    "url": "https://www.tripadvisor.com",
+    "title": "TripAdvisor",
+    "description": "World's largest travel platform. Browse hundreds of millions of traveller reviews and opinions. Compare low prices on hotels, flights, and cruises. Book popular tours and attractions as well as reservation tables at great restaurants."
+  },
+  {
+    "icon": "https://www.booking.com/favicon.ico",
+    "url": "https://www.booking.com",
+    "title": "Booking.com",
+    "description": "Great rates. No booking fees. Choose from over 28 million homes, hotels and other properties in 148 countries."
+  },
+  {
+    "icon": "https://www.airbnb.com/favicon.ico",
+    "url": "https://www.airbnb.com",
+    "title": "Airbnb",
+    "description": "Find vacation rentals, cabins, beach houses, unique homes and experiences around the world – all made possible by hosts on Airbnb."
+  },
+  {
+    "icon": "https://www.uber.com/favicon.ico",
+    "url": "https://www.uber.com",
+    "title": "Uber",
+    "description": "Uber is a ride-sharing app that connects you with reliable rides in minutes. One tap and a car comes directly to you."
+  },
+  {
+    "icon": "https://www.lyft.com/favicon.ico",
+    "url": "https://www.lyft.com",
+    "title": "Lyft",
+    "description": "Lyft is your friend with a car, whenever you need one. Download the app and get a ride from a friendly driver within minutes."
+  },
+  {
+    "icon": "https://www.paypal.com/favicon.ico",
+    "url": "https://www.paypal.com",
+    "title": "PayPal",
+    "description": "PayPal is the faster, safer way to send money, make an online payment, receive money or set up a merchant account."
+  },
+  {
+    "icon": "https://stripe.com/favicon.ico",
+    "url": "https://stripe.com",
+    "title": "Stripe",
+    "description": "Stripe is a suite of payment APIs that powers commerce for online businesses of all sizes."
+  },
+  {
+    "icon": "https://www.shopify.com/favicon.ico",
+    "url": "https://www.shopify.com",
+    "title": "Shopify",
+    "description": "Shopify is a leading cloud-based, multi-channel commerce platform designed for small and medium-sized businesses."
+  },
+  {
+    "icon": "https://wordpress.org/favicon.ico",
+    "url": "https://wordpress.org",
+    "title": "WordPress",
+    "description": "WordPress is web software you can use to create a beautiful website, blog, or app. We like to say that WordPress is both free and priceless at the same time."
+  },
+  {
+    "icon": "https://www.wix.com/favicon.ico",
+    "url": "https://www.wix.com",
+    "title": "Wix",
+    "description": "Create a free website with Wix.com. Choose a stunning template and customize anything with the Wix website builder—no coding skills needed."
+  },
+  {
+    "icon": "https://www.squarespace.com/favicon.ico",
+    "url": "https://www.squarespace.com",
+    "title": "Squarespace",
+    "description": "Squarespace is the all-in-one solution for anyone looking to create a beautiful website. Domains, eCommerce, hosting, galleries, analytics, and 24/7 support all included."
+  },
+  {
+    "icon": "https://medium.com/favicon.ico",
+    "url": "https://medium.com",
+    "title": "Medium",
+    "description": "Medium is an open platform where readers find dynamic thinking, and where expert and undiscovered voices can share their writing on any topic."
+  },
+  {
+    "icon": "https://www.quora.com/favicon.ico",
+    "url": "https://www.quora.com",
+    "title": "Quora",
+    "description": "Quora is a place to gain and share knowledge. It's a platform to ask questions and connect with people who contribute unique insights and quality answers."
+  },
+  {
+    "icon": "https://stackexchange.com/favicon.ico",
+    "url": "https://stackexchange.com",
+    "title": "Stack Exchange",
+    "description": "Stack Exchange is a network of 170+ Q&A communities including Stack Overflow, the largest, most trusted online community for developers to learn, share their knowledge, and build their careers."
+  },
+  {
+    "icon": "https://discord.com/favicon.ico",
+    "url": "https://discord.com",
+    "title": "Discord",
+    "description": "Discord is the easiest way to talk over voice, video, and text. Talk, chat, hang out, and stay close with your friends and communities."
+  },
+  {
+    "icon": "https://telegram.org/favicon.ico",
+    "url": "https://telegram.org",
+    "title": "Telegram",
+    "description": "Telegram is a cloud-based mobile and desktop messaging app with a focus on security and speed."
+  },
+  {
+    "icon": "https://www.whatsapp.com/favicon.ico",
+    "url": "https://www.whatsapp.com",
+    "title": "WhatsApp",
+    "description": "WhatsApp Messenger is a freeware and cross-platform messaging and Voice over IP service owned by Meta Platforms."
+  },
+  {
+    "icon": "https://signal.org/favicon.ico",
+    "url": "https://signal.org",
+    "title": "Signal",
+    "description": "Signal is a cross-platform encrypted messaging service developed by the Signal Foundation and Signal Messenger LLC."
+  },
+  {
+    "icon": "https://proton.me/favicon.ico",
+    "url": "https://proton.me",
+    "title": "ProtonMail",
+    "description": "ProtonMail is the world's largest secure email service, developed by CERN and MIT scientists. We are open source and protected by Swiss privacy law."
+  },
+  {
+    "icon": "https://mail.google.com/favicon.ico",
+    "url": "https://mail.google.com",
+    "title": "Gmail",
+    "description": "Gmail is email that's intuitive, efficient, and useful. 15 GB of storage, less spam, and mobile access."
+  },
+  {
+    "icon": "https://outlook.live.com/favicon.ico",
+    "url": "https://outlook.live.com",
+    "title": "Outlook",
+    "description": "Outlook.com is a free personal email service from Microsoft that doesn't scan your email for the purpose of serving you ads."
+  },
+  {
+    "icon": "https://www.yahoo.com/favicon.ico",
+    "url": "https://www.yahoo.com",
+    "title": "Yahoo",
+    "description": "News, email and search are just the beginning. Discover more every day. Find your yodel."
+  },
+  {
+    "icon": "https://www.bing.com/favicon.ico",
+    "url": "https://www.bing.com",
+    "title": "Bing",
+    "description": "Bing helps you turn information into action, making it faster and easier to go from searching to doing."
+  },
+  {
+    "icon": "https://duckduckgo.com/favicon.ico",
+    "url": "https://duckduckgo.com",
+    "title": "DuckDuckGo",
+    "description": "DuckDuckGo is an internet search engine that emphasizes protecting searchers' privacy and avoiding the filter bubble of personalized search results."
+  },
+  {
+    "icon": "https://archive.org/favicon.ico",
+    "url": "https://archive.org",
+    "title": "Archive.org",
+    "description": "Internet Archive is a non-profit library of millions of free books, movies, software, music, websites, and more."
+  },
+  {
+    "icon": "https://vimeo.com/favicon.ico",
+    "url": "https://vimeo.com",
+    "title": "Vimeo",
+    "description": "Vimeo is the world's leading all-in-one video software solution. Our platform enables any professional, team, and organization to unlock the power of video to create, collaborate and communicate."
+  },
+  {
+    "icon": "https://www.dailymotion.com/favicon.ico",
+    "url": "https://www.dailymotion.com",
+    "title": "Dailymotion",
+    "description": "The latest news, sports, music and entertainment videos on Dailymotion."
+  },
+  {
+    "icon": "https://www.flickr.com/favicon.ico",
+    "url": "https://www.flickr.com",
+    "title": "Flickr",
+    "description": "Flickr is where photographers and photography enthusiasts share, discover, and discuss their work."
+  },
+  {
+    "icon": "https://www.deviantart.com/favicon.ico",
+    "url": "https://www.deviantart.com",
+    "title": "DeviantArt",
+    "description": "DeviantArt is the world's largest online social community for artists and art enthusiasts, allowing people to connect through the creation and sharing of art."
+  },
+  {
+    "icon": "https://www.behance.net/favicon.ico",
+    "url": "https://www.behance.net",
+    "title": "Behance",
+    "description": "Behance is the world's largest creative network for showcasing and discovering creative work."
+  },
+  {
+    "icon": "https://dribbble.com/favicon.ico",
+    "url": "https://dribbble.com",
+    "title": "Dribbble",
+    "description": "Dribbble is where designers gain inspiration, feedback, community, and jobs. It's the best resource to discover and connect with designers worldwide."
+  },
+  {
+    "icon": "https://soundcloud.com/favicon.ico",
+    "url": "https://soundcloud.com",
+    "title": "SoundCloud",
+    "description": "SoundCloud is a global online audio distribution platform and music sharing website that enables its users to upload, promote, and share audio."
+  },
+  {
+    "icon": "https://bandcamp.com/favicon.ico",
+    "url": "https://bandcamp.com",
+    "title": "Bandcamp",
+    "description": "Bandcamp is an online record store and music community where fans discover great music and directly support the artists who make it."
+  },
+  {
+    "icon": "https://www.patreon.com/favicon.ico",
+    "url": "https://www.patreon.com",
+    "title": "Patreon",
+    "description": "Patreon is a membership platform that makes it easy for artists and creators to get paid. Join thousands of creators earning a sustainable income doing what they love."
+  }
+]
+ 

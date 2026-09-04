@@ -1,0 +1,32 @@
+[
+  {
+    "id": "post1",
+    "title": "Exploring the Future of Web Tools",
+    "image": "assets/blog1.jpg",
+    "url": "https://www.google.com"
+  },
+  {
+    "id": "post2",
+    "title": "Designing for Simplicity",
+    "image": "assets/blog2.jpg",
+    "url": "https://www.wikipedia.org"
+  },
+   {
+    "id": "post4",
+    "title": "Building a Better Toolkit",
+    "image": "assets/blog4.jpg",
+    "url": "https://stackoverflow.com"
+  },
+  {
+    "id": "post3",
+    "title": "The Power of Focused Software",
+    "image": "assets/blog3.jpg",
+    "url": "https://github.com"
+  },
+  {
+    "id": "post4",
+    "title": "Building a Better Toolkit",
+    "image": "assets/blog4.jpg",
+    "url": "https://stackoverflow.com"
+  }
+]
