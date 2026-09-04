@@ -1,0 +1,599 @@
+/* ==========================================================================
+   MICIANARON GLOBAL STYLESHEET – GOOGLE THEME (MONOCHROME)
+   ========================================================================== */
+
+:root {
+  --bg: #ffffff;
+  --text-color: #202124;
+  --subtext-color: #5f6368;
+  --nav-link-color: #5f6368;
+  --nav-link-hover: #202124;
+  --mobile-menu-bg: #ffffff;
+  --card-bg: #f8f9fa;
+  --border-color: #dadce0;
+  --divider-color: #e8eaed;
+  --input-bg: #ffffff;
+  --accent-btn: #202124;
+  --accent-btn-text: #ffffff;
+  --header-bg: #ffffff;
+  --footer-bg: #f2f2f2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #202124;
+    --text-color: #e8eaed;
+    --subtext-color: #9aa0a6;
+    --nav-link-color: #9aa0a6;
+    --nav-link-hover: #e8eaed;
+    --mobile-menu-bg: #202124;
+    --card-bg: #303134;
+    --border-color: #5f6368;
+    --divider-color: #3c4043;
+    --input-bg: #303134;
+    --accent-btn: #e8eaed;
+    --accent-btn-text: #202124;
+    --header-bg: #202124;
+    --footer-bg: #171717;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   HEADER – full width, Google‑style
+   ========================================================================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  flex-shrink: 0;
+  z-index: 100;
+  gap: 1rem;
+  padding: 0 20px;
+  background: var(--header-bg);
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.brand-logo img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--text-color);
+  text-transform: lowercase;
+}
+
+/* Header search – hidden by default, shown only on tools page */
+.header-search {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 0 16px;
+  height: 44px;
+  width: 100%;
+  max-width: 600px;
+  flex-grow: 1;
+  margin: 0 auto;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.header-search i {
+  color: var(--subtext-color);
+  font-size: 0.9rem;
+}
+
+.header-search input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.header-search input::placeholder {
+  color: var(--subtext-color);
+  opacity: 0.7;
+}
+
+.header-search:focus-within {
+  border-color: var(--nav-link-hover);
+  box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+}
+
+header.tools-active .header-search {
+  display: flex;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--nav-link-color);
+  font-weight: 400;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--nav-link-hover);
+}
+
+/* Hamburger */
+.hamburger-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.hamburger-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   HEADER SEPARATOR
+   ========================================================================== */
+.header-separator {
+  width: 100%;
+  height: 1px;
+  background: var(--divider-color);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   MAIN CONTAINER
+   ========================================================================== */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Full-width container override for contact page */
+.container.full-width {
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ensure page content and its child stretch full width */
+.container.full-width .page-content {
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  align-items: stretch;  /* This fixes the non-stretching child */
+}
+
+.container.full-width #pageContent {
+  width: 100%;
+}
+
+/* ==========================================================================
+   MAIN VIEW SYSTEM
+   ========================================================================== */
+main.view {
+  display: none;
+  flex: 1;
+  min-height: 0;
+  padding: 1rem 0;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+main.view.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   HOME HERO
+   ========================================================================== */
+.hero {
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.hero-quote {
+  font-size: clamp(2.2rem, 3.8vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-align: left;
+}
+
+.hero-description-span {
+  display: block;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--subtext-color);
+  font-weight: 400;
+  text-align: left;
+}
+
+/* Primary button */
+.hero-btn-span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent-btn);
+  color: var(--accent-btn-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  border: none;
+}
+
+.hero-btn-span:hover {
+  background: var(--nav-link-hover);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.hero-image-wrapper {
+  flex: 1.8;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0;
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   GENERAL CONTENT PAGES
+   ========================================================================== */
+.page-content {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 1rem;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.page-content::-webkit-scrollbar {
+  display: none;
+}
+
+.page-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.text-block {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--subtext-color);
+  text-align: left;
+  font-weight: 400;
+}
+
+.text-divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--divider-color);
+  margin: 1.5rem 0;
+  border: none;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+  width: 100%;
+  flex-shrink: 0;
+  background: var(--footer-bg);
+  color: var(--subtext-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-link {
+  color: var(--subtext-color);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--nav-link-hover);
+}
+
+.footer-copy {
+  color: var(--subtext-color);
+}
+
+/* ==========================================================================
+   FORMS
+   ========================================================================== */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--nav-link-hover);
+}
+
+/* ==========================================================================
+   MOBILE NAVIGATION
+   ========================================================================== */
+@media (max-width: 868px) {
+  .hamburger-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--mobile-menu-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease-in-out;
+    z-index: 99;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  nav a {
+    font-size: 1.5rem;
+  }
+
+  .hamburger-toggle.active span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+
+  .hamburger-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-toggle.active span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-quote {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  .hero-image-wrapper {
+    flex: 1;
+    width: 100%;
+  }
+
+  .hero-image-wrapper img {
+    max-height: 40vh;
+  }
+
+  .page-content {
+    padding-right: 0;
+  }
+
+  #view-page .form-container {
+    width: 100%;
+    max-width: 520px;
+    padding: 0 0.5rem;
+  }
+
+  #view-page .form-group input,
+  #view-page .form-group textarea {
+    min-height: 50px;
+  }
+
+  #view-page .form-container .hero-btn-span {
+    min-height: 50px;
+  }
+
+  header {
+    flex-wrap: nowrap;
+    gap: 0.8rem;
+    padding: 0 12px;
+  }
+
+  .brand-container {
+    order: 1;
+    flex-shrink: 0;
+  }
+
+  .header-search {
+    order: 2;
+    flex: 1 1 auto;
+    max-width: none;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .hamburger-toggle {
+    order: 3;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo img {
+    height: 30px;
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  header {
+    height: 54px;
+  }
+
+  #view-page .form-group input,
+  #view-page .form-group textarea {
+    min-height: 50px;
+    font-size: 16px;
+  }
+}

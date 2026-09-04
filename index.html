@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>micianaron</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/styles/style.css" />
+  <link rel="stylesheet" href="../assets/styles/tools.css" />
+
+  <link rel="icon" href="../assets/images/dark-logo.png" media="(prefers-color-scheme: light)" />
+  <link rel="icon" href="../assets/images/light-logo.png" media="(prefers-color-scheme: dark)" />
+</head>
+<body>
+  <!-- Full‑width header -->
+  <header id="mainHeader">
+    <div class="brand-container" data-page="home">
+      <div class="brand-logo">
+        <picture>
+          <source srcset="../assets/images/light-logo.png" media="(prefers-color-scheme: dark)" />
+          <img src="../assets/images/dark-logo.png" alt="micianaron logo" />
+        </picture>
+      </div>
+      <span class="brand-name">micianaron</span>
+    </div>
+
+    <div class="header-search" id="headerSearch">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="globalToolSearch" placeholder="Search tools..." />
+    </div>
+
+    <button class="hamburger-toggle" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="navMenu">
+      <ul>
+        <li><a class="nav-link" data-page="tools" id="nav-tools">Tools</a></li>
+        <li><a class="nav-link" data-page="contact" id="nav-contact">Contact</a></li>
+        <li><a class="nav-link" data-page="partner" id="nav-partner">Partners</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Separator line under header -->
+  <div class="header-separator"></div>
+
+  <!-- Main content container -->
+  <div class="container">
+    <!-- HOME -->
+    <main class="view hero active" id="view-home">
+      <div class="hero-content">
+        <blockquote class="hero-quote">Every task. One simple toolkit.</blockquote>
+        <span class="hero-description-span">
+          micianaron is a collection of focused online tools built to help you complete digital tasks quickly and without unnecessary complexity. Find the tool you need, use it, get your result, and move on.
+        </span>
+        <span class="hero-btn-span" data-page="tools">Explore Tools</span>
+      </div>
+      <div class="hero-image-wrapper">
+        <picture>
+          <source srcset="../assets/images/light-hero.png" media="(prefers-color-scheme: dark)" />
+          <img src="../assets/images/dark-hero.png" alt="micianaron tools showcase" />
+        </picture>
+      </div>
+    </main>
+
+    <!-- DYNAMIC PAGE CONTENT -->
+    <main class="view page-content" id="view-page">
+      <div id="pageContent"></div>
+    </main>
+  </div>
+
+  <!-- Full‑width footer -->
+  <footer>
+    <div class="footer-links">
+      <a class="footer-link" data-page="about">About</a>
+      <a class="footer-link" data-page="privacy">Privacy</a>
+    </div>
+    <span class="footer-copy">© 2025 micianaron</span>
+  </footer>
+
+  <script src="../scripts/script.js"></script>
+  <script src="../scripts/tools.js"></script>
+</body>
+</html>
