@@ -88,7 +88,7 @@ document.getElementById('pageContent').addEventListener('submit', (e) => {
 });
 
 // --------------------------------------------------------------------------
-// PAGE LOADER (with preloaded assets and transition)
+// PAGE LOADER
 // --------------------------------------------------------------------------
 async function loadPage(pageId) {
   if (!validPages.includes(pageId)) pageId = 'home';
@@ -109,42 +109,31 @@ async function loadPage(pageId) {
   }
 
   if (pageId === 'home') {
-    // Apply zoom transition to home
-    const homeView = document.getElementById('view-home');
-    homeView.classList.add('page-enter');
-    setTimeout(() => homeView.classList.remove('page-enter'), 250);
-
     document.querySelectorAll('main.view').forEach(v => v.classList.remove('active'));
-    homeView.classList.add('active');
+    document.getElementById('view-home').classList.add('active');
   } else {
     try {
-      // Preload page assets (CSS/JS) before fetching HTML
-      if (pageAssets[pageId]) {
+      // ONLY preload assets for register/sendcontact to prevent input glitch
+      if (pageAssets[pageId] && (pageId === 'register' || pageId === 'sendcontact')) {
         await loadPageAssets(pageId);
+      } else if (pageAssets[pageId]) {
+        // For other pages, load assets in background
+        loadPageAssets(pageId);
       }
 
-      // Fetch the page HTML after CSS is ready
       const response = await fetch(pageFiles[pageId]);
       if (!response.ok) throw new Error(`Failed to load ${pageFiles[pageId]}`);
       const html = await response.text();
 
-      // Insert HTML into a temporary container
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = html;
 
-      // Replace current content
       pageContent.innerHTML = '';
       pageContent.appendChild(tempDiv.firstChild);
 
-      // Apply zoom transition
-      pageContent.classList.add('page-enter');
-      setTimeout(() => pageContent.classList.remove('page-enter'), 250);
-
-      // Show new page
       document.querySelectorAll('main.view').forEach(v => v.classList.remove('active'));
       document.getElementById('view-page').classList.add('active');
 
-      // Initialize page-specific scripts after DOM is updated
       if (pageId === 'tools' && typeof window.initToolsPage === 'function') {
         window.initToolsPage();
       }
@@ -159,18 +148,16 @@ async function loadPage(pageId) {
     }
   }
 
-  // Navigation highlight
   document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
   const targetNav = document.getElementById(`nav-${pageId}`);
   if (targetNav) targetNav.classList.add('active');
 
-  // Close mobile menu
   hamburgerBtn.classList.remove('active');
   navMenu.classList.remove('active');
 }
 
 // --------------------------------------------------------------------------
-// LOAD PAGE ASSETS (CSS/JS) – returns a Promise
+// LOAD PAGE ASSETS (CSS/JS) – returns a Promise if awaited, else background
 // --------------------------------------------------------------------------
 function loadPageAssets(pageId) {
   const assets = pageAssets[pageId];
@@ -209,7 +196,6 @@ function loadPageAssets(pageId) {
     if (pageId === 'about' && typeof window.initAboutPage === 'function') {
       window.initAboutPage();
     }
-    return Promise.resolve();
   }
 
   return Promise.all(promises);
