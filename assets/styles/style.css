@@ -213,19 +213,18 @@ nav a.active {
   position: relative;
 }
 
-/* Full-width container override for contact page */
+/* Full-width container override for contact and partner pages */
 .container.full-width {
   max-width: none;
   padding: 0;
   margin: 0;
 }
 
-/* Ensure page content and its child stretch full width */
 .container.full-width .page-content {
   max-width: none;
   padding: 0;
   margin: 0;
-  align-items: stretch;  /* This fixes the non-stretching child */
+  align-items: stretch;
 }
 
 .container.full-width #pageContent {
@@ -595,22 +594,5 @@ footer {
   #view-page .form-group textarea {
     min-height: 50px;
     font-size: 16px;
-  }
-}
-
-
-/* Page transition: subtle zoom */
-.page-enter {
-  animation: pageZoomIn 0.25s ease-out;
-}
-
-@keyframes pageZoomIn {
-  from {
-    opacity: 0.8;
-    transform: scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
