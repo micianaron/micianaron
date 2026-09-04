@@ -8,14 +8,7 @@ const pageContent = document.getElementById('pageContent');
 const mainHeader = document.getElementById('mainHeader');
 
 const validPages = [
-  'home',
-  'tools',
-  'about',
-  'privacy',
-  'contact',
-  'partner',
-  'register',
-  'sendcontact'
+  'home', 'tools', 'about', 'privacy', 'contact', 'partner', 'register', 'sendcontact'
 ];
 
 const pageFiles = {
@@ -31,21 +24,13 @@ const pageFiles = {
 // Page-specific assets (CSS/JS) loaded on demand
 const pageAssets = {
   about: {
-    css: '../assets/styles/about.css',
-    js: '../scripts/about.js'
+    css: '/assets/styles/about.css',
+    js: '/scripts/about.js'
   },
-  contact: {
-    css: '../assets/styles/contact.css'
-  },
-  partner: {
-    css: '../assets/styles/partner.css'
-  },
-  sendcontact: {
-    css: '../assets/styles/sendcontact.css'
-  },
-  register: {
-    css: '../assets/styles/register.css'
-  }
+  contact: { css: '/assets/styles/contact.css' },
+  partner: { css: '/assets/styles/partner.css' },
+  sendcontact: { css: '/assets/styles/sendcontact.css' },
+  register: { css: '/assets/styles/register.css' }
 };
 
 // Routing token management (session-based)
@@ -103,7 +88,7 @@ document.getElementById('pageContent').addEventListener('submit', (e) => {
 });
 
 // --------------------------------------------------------------------------
-// PAGE LOADER
+// PAGE LOADER (with smooth transition)
 // --------------------------------------------------------------------------
 async function loadPage(pageId) {
   if (!validPages.includes(pageId)) pageId = 'home';
@@ -124,24 +109,39 @@ async function loadPage(pageId) {
   }
 
   if (pageId === 'home') {
+    // Home transition
     document.querySelectorAll('main.view').forEach(v => v.classList.remove('active'));
     document.getElementById('view-home').classList.add('active');
   } else {
     try {
-      const response = await fetch(pageFiles[pageId]); // relative to public/
-      if (!response.ok) throw new Error(`Failed to load ${pageFiles[pageId]}`);
-      const html = await response.text();
-      pageContent.innerHTML = html;
+      // Preload page assets in parallel with page content
+      const assetPromises = [];
+      if (pageAssets[pageId]) {
+        assetPromises.push(loadPageAssets(pageId));
+      }
 
+      // Start fetching the page HTML
+      const pageFetch = fetch(pageFiles[pageId]).then(res => {
+        if (!res.ok) throw new Error(`Failed to load ${pageFiles[pageId]}`);
+        return res.text();
+      });
+
+      // Wait for both assets and HTML to be ready
+      const [html] = await Promise.all([pageFetch, ...assetPromises]);
+
+      // Insert HTML into a temporary container to avoid layout thrash
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = html;
+
+      // Replace current content with new content
+      pageContent.innerHTML = '';
+      pageContent.appendChild(tempDiv.firstChild);
+
+      // Now show the new page
       document.querySelectorAll('main.view').forEach(v => v.classList.remove('active'));
       document.getElementById('view-page').classList.add('active');
 
-      // Load page-specific assets (CSS/JS) if defined
-      if (pageAssets[pageId]) {
-        loadPageAssets(pageId);
-      }
-
-      // Initialize page-specific scripts
+      // Initialize page-specific scripts after DOM is updated
       if (pageId === 'tools' && typeof window.initToolsPage === 'function') {
         window.initToolsPage();
       }
@@ -167,11 +167,13 @@ async function loadPage(pageId) {
 }
 
 // --------------------------------------------------------------------------
-// LOAD PAGE ASSETS (CSS/JS) DYNAMICALLY
+// LOAD PAGE ASSETS (CSS/JS) – returns a Promise
 // --------------------------------------------------------------------------
 function loadPageAssets(pageId) {
   const assets = pageAssets[pageId];
-  if (!assets) return;
+  if (!assets) return Promise.resolve();
+
+  const promises = [];
 
   if (assets.css && !document.getElementById(`page-css-${pageId}`)) {
     const link = document.createElement('link');
@@ -179,6 +181,10 @@ function loadPageAssets(pageId) {
     link.href = assets.css;
     link.id = `page-css-${pageId}`;
     document.head.appendChild(link);
+    promises.push(new Promise(resolve => {
+      link.onload = resolve;
+      link.onerror = resolve;
+    }));
   }
 
   if (assets.js && !document.getElementById(`page-js-${pageId}`)) {
@@ -187,16 +193,23 @@ function loadPageAssets(pageId) {
     script.id = `page-js-${pageId}`;
     script.async = false;
     document.body.appendChild(script);
-    script.onload = () => {
-      if (pageId === 'about' && typeof window.initAboutPage === 'function') {
-        window.initAboutPage();
-      }
-    };
+    promises.push(new Promise(resolve => {
+      script.onload = () => {
+        if (pageId === 'about' && typeof window.initAboutPage === 'function') {
+          window.initAboutPage();
+        }
+        resolve();
+      };
+      script.onerror = resolve;
+    }));
   } else if (assets.js && document.getElementById(`page-js-${pageId}`)) {
     if (pageId === 'about' && typeof window.initAboutPage === 'function') {
       window.initAboutPage();
     }
+    return Promise.resolve();
   }
+
+  return Promise.all(promises);
 }
 
 // --------------------------------------------------------------------------
