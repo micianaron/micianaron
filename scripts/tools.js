@@ -16,7 +16,7 @@ function initToolsPage() {
 
 async function fetchTools() {
   try {
-    const response = await fetch('../backend/content/tools.json');  // relative from public/
+    const response = await fetch('backend/content/tools.json');  // relative from public/
     if (!response.ok) throw new Error('Failed to load tools');
     allTools = await response.json();
     filteredTools = [...allTools];
