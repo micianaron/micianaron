@@ -3,11 +3,11 @@
    ========================================================================== */
 
 #view-page.page-content:has(.split-layout) {
-  max-width: 100%;
+  max-width: 100vw;
   padding: 0;
   margin: 0;
   overflow: hidden;
-  height: 100%;
+  height: 100vh;
 }
 
 /* Blocks vertical shifting and input visibility before stylesheet mounts completely */
@@ -20,8 +20,8 @@
 .split-layout {
   display: flex;
   gap: 2rem;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   align-items: stretch;
   min-height: 0;
   margin-top: 1.5rem;
@@ -46,22 +46,22 @@
 
 /* Form container full width, no extra margins, inputs stretch to left edge */
 .form-side .form-container {
-  width: 100%;
-  max-width: 100%;
+  width: 100vw;
+  max-width: 100vh;
   margin: 0;
   gap: 1rem;
 }
 
 .form-side .form-group {
-  width: 100%;
+  width: 100vw;
   margin: 0;
 }
 
 /* Inputs and textarea: fixed size, no manual resize */
 .form-side .form-group input,
 .form-side .form-group textarea {
-  width: 100%;
-  min-height: 48px;
+  width: 100vw;
+  min-height: 48vh;
   margin: 0;
 }
 
@@ -81,8 +81,8 @@
 }
 
 .banner-side img {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   border: 2px solid var(--border-color);
   border-radius: 8px;
@@ -103,6 +103,6 @@
 
   .banner-side img {
     height: 40vh;
-    width: 100%;
+    width: 100vw;
   }
 }
