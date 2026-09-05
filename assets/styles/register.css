@@ -1,34 +1,102 @@
-<div class="split-layout">
-  <!-- Left side: registration form -->
-  <div class="form-side">
-    <h1 class="page-title">Partner Registration</h1>
-    <form class="form-container" id="partnerRegistrationForm">
-      <div class="form-group">
-        <label>Business Email Address</label>
-        <input id="partnerEmail" type="email" placeholder="advertiser@company.com" required />
-      </div>
-      <div class="form-group">
-        <label>Company / Brand</label>
-        <input id="partnerCompany" type="text" placeholder="Your company or brand" required />
-      </div>
-      <div class="form-group">
-        <label>Contact Name</label>
-        <input id="partnerName" type="text" placeholder="Your name" required />
-      </div>
-      <div class="form-group">
-        <label>Account Password</label>
-        <input id="partnerPassword" type="password" placeholder="Create a password" minlength="8" required />
-      </div>
-      <div class="form-group">
-        <label>Partnership Details</label>
-        <textarea id="partnerDetails" rows="4" placeholder="Tell us about your advertising or partnership request..." required></textarea>
-      </div>
-      <button type="submit" class="hero-btn-span">Create Partner Account</button>
-    </form>
-  </div>
+/* ==========================================================================
+   MICIANARON REGISTER PAGE STYLESHEET
+   ========================================================================== */
 
-  <!-- Right side: banner image with visible border -->
-  <div class="banner-side">
-    <img src="assets/images/register-banner.png" alt="Registration banner" onerror="this.onerror=null; this.src='assets/images/dark-logo.png';" />
-  </div>
-</div>
+/* Restored original parent tree rules to prevent layout collapse */
+#view-page.page-content:has(.split-layout) {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+.split-layout {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+  min-height: 0;
+  margin-top: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Forces elements inside layout to calculate sizing instantly without layout shift */
+.split-layout *, .split-layout *::before, .split-layout *::after {
+  box-sizing: border-box;
+}
+
+/* Left side: form fills available height, aligned left */
+.form-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-right: 0;
+  min-width: 0;
+}
+
+/* Form container full width, no extra margins, inputs stretch to left edge */
+.form-side .form-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  gap: 1rem;
+}
+
+.form-side .form-group {
+  width: 100%;
+  margin: 0;
+}
+
+/* Inputs and textarea: fixed size, no manual resize */
+.form-side .form-group input,
+.form-side .form-group textarea {
+  width: 100%;
+  min-height: 48px;
+  margin: 0;
+}
+
+.form-side .form-group textarea {
+  resize: none;           /* Prevent user resizing */
+  height: 120px;          /* Fixed height, slightly shorter for register */
+}
+
+/* Right side: banner image with border */
+.banner-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.banner-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  display: block;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 868px) {
+  .split-layout {
+    flex-direction: column;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  #view-page.page-content:has(.split-layout) {
+    overflow-y: auto;
+  }
+
+  .banner-side img {
+    height: 40vh;
+    width: 100%;
+  }
+}
