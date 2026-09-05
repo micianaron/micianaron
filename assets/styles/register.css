@@ -1,63 +1,57 @@
 /* ==========================================================================
-   MICIANARON REGISTER PAGE STYLESHEET
+   MICIANARON REGISTER PAGE STYLESHEET (PIXEL ANCHORED)
    ========================================================================== */
 
-/* Ensure no scrolling and full height */
+/* Set a standard max container footprint */
 #view-page.page-content:has(.split-layout) {
   max-width: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
-  height: 100%;
+  overflow-y: auto;
 }
 
 .split-layout {
   display: flex;
-  gap: 2rem;
+  gap: 32px;
   width: 100%;
-  height: 100%;
   align-items: stretch;
-  min-height: 0;
-  /* Add top margin below header separator */
-  margin-top: 1.5rem;
-
-  /* Pure CSS Fade-In: Gives the layout a tiny fraction of a second to settle 
-     before fading up, hiding the layout twitch natively without JavaScript scripts. */
-  animation: smoothViewShow 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  opacity: 0;
+  margin-top: 24px;
+  box-sizing: border-box;
 }
 
-@keyframes smoothViewShow {
-  to {
-    opacity: 1;
-  }
+/* Force baseline calculation instantly */
+.split-layout *, .split-layout *::before, .split-layout *::after {
+  box-sizing: border-box;
 }
 
-/* Left side: form fills available height, aligned left */
+/* Left side: form configuration */
 .form-side {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 24px;
   padding-right: 0;
   min-width: 0;
 }
 
-/* Form container full width, no extra margins, inputs stretch to left edge */
 .form-side .form-container {
   width: 100%;
   max-width: 100%;
   margin: 0;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .form-side .form-group {
   width: 100%;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Inputs and textarea: fixed size, no manual resize */
 .form-side .form-group input,
 .form-side .form-group textarea {
   width: 100%;
@@ -66,8 +60,8 @@
 }
 
 .form-side .form-group textarea {
-  resize: none;           /* Prevent user resizing */
-  height: 120px;          /* Fixed height, slightly shorter for register */
+  resize: none;
+  height: 120px;
 }
 
 /* Right side: banner image with border */
@@ -82,26 +76,47 @@
 
 .banner-side img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   border: 2px solid var(--border-color);
   border-radius: 8px;
+  display: block;
 }
 
-/* Responsive: stack on mobile */
+/* ==========================================================================
+   MEDIA QUERY HEIGHT CALCULATIONS (FIXED PIXELS)
+   ========================================================================== */
+
+/* Large Desktop Screens */
+@media (min-width: 1200px) {
+  .split-layout {
+    height: 650px;
+  }
+  .banner-side img {
+    height: 650px;
+  }
+}
+
+/* Normal Laptops / Small Desktops */
+@media (min-width: 869px) and (max-width: 1199px) {
+  .split-layout {
+    height: 580px;
+  }
+  .banner-side img {
+    height: 580px;
+  }
+}
+
+/* Tablets and Mobile Phones (Stacked) */
 @media (max-width: 868px) {
   .split-layout {
     flex-direction: column;
     height: auto;
-    margin-top: 1rem;
-  }
-
-  #view-page.page-content:has(.split-layout) {
-    overflow-y: auto;
+    margin-top: 16px;
+    gap: 24px;
   }
 
   .banner-side img {
-    height: 40vh;
+    height: 350px;
     width: 100%;
   }
 }
