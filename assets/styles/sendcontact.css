@@ -11,6 +11,12 @@
   height: 100%;
 }
 
+/* Hidden utility state to allow dimension calculations while completely invisible */
+.split-layout.loading {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
 .split-layout {
   display: flex;
   gap: 2rem;
@@ -20,6 +26,9 @@
   min-height: 0;
   /* Add top margin below header separator */
   margin-top: 1.5rem;
+  
+  /* Smooth opacity transition when 'loading' class is stripped away */
+  transition: opacity 0.4s ease-out;
 }
 
 /* Left side: form fills available height, aligned left */
