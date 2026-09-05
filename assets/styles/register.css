@@ -2,6 +2,7 @@
    MICIANARON REGISTER PAGE STYLESHEET
    ========================================================================== */
 
+/* Ensure no scrolling and full height */
 #view-page.page-content:has(.split-layout) {
   max-width: 100%;
   padding: 0;
@@ -14,16 +15,22 @@
   display: flex;
   gap: 2rem;
   width: 100%;
-  /* CORRECT VIEWPORT USE: Locks the container height instantly to the window height */
-  height: calc(100vh - 4rem); 
-  min-height: calc(100vh - 4rem);
+  height: 100%;
   align-items: stretch;
+  min-height: 0;
+  /* Add top margin below header separator */
   margin-top: 1.5rem;
-  box-sizing: border-box;
+
+  /* Pure CSS Fade-In: Gives the layout a tiny fraction of a second to settle 
+     before fading up, hiding the layout twitch natively without JavaScript scripts. */
+  animation: smoothViewShow 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
 }
 
-.split-layout *, .split-layout *::before, .split-layout *::after {
-  box-sizing: border-box;
+@keyframes smoothViewShow {
+  to {
+    opacity: 1;
+  }
 }
 
 /* Left side: form fills available height, aligned left */
@@ -37,24 +44,20 @@
   min-width: 0;
 }
 
-/* Form container full width of its parent block, safely bounded */
+/* Form container full width, no extra margins, inputs stretch to left edge */
 .form-side .form-container {
   width: 100%;
   max-width: 100%;
   margin: 0;
-  display: flex;
-  flex-direction: column;
   gap: 1rem;
 }
 
 .form-side .form-group {
   width: 100%;
   margin: 0;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Inputs stay mapped to parent constraints instead of shattering via vw/vh */
+/* Inputs and textarea: fixed size, no manual resize */
 .form-side .form-group input,
 .form-side .form-group textarea {
   width: 100%;
@@ -63,8 +66,8 @@
 }
 
 .form-side .form-group textarea {
-  resize: none;
-  height: 120px;
+  resize: none;           /* Prevent user resizing */
+  height: 120px;          /* Fixed height, slightly shorter for register */
 }
 
 /* Right side: banner image with border */
@@ -83,7 +86,6 @@
   object-fit: cover;
   border: 2px solid var(--border-color);
   border-radius: 8px;
-  display: block;
 }
 
 /* Responsive: stack on mobile */
@@ -91,7 +93,6 @@
   .split-layout {
     flex-direction: column;
     height: auto;
-    min-height: auto;
     margin-top: 1rem;
   }
 
