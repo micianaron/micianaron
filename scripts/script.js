@@ -167,13 +167,16 @@ async function loadPage(pageId) {
 }
 
 // --------------------------------------------------------------------------
-// LOAD PAGE ASSETS (CSS/JS) DYNAMICALLY & ELIMINATE LOAD GLITCH
+// LOAD PAGE ASSETS (CSS/JS) DYNAMICALLY & ELIMINATE LOAD GLITCH (FIXED)
 // --------------------------------------------------------------------------
 function loadPageAssets(pageId) {
   const assets = pageAssets[pageId];
   if (!assets) return;
 
-  const layout = document.querySelector(".split-layout");
+  // FIX: Only target the .split-layout INSIDE the freshly loaded page content
+  const pageContentContainer = document.getElementById('pageContent');
+  const layout = pageContentContainer ? pageContentContainer.querySelector(".split-layout") : null;
+  
   if (layout) {
     layout.classList.add("loading");
   }
@@ -184,7 +187,7 @@ function loadPageAssets(pageId) {
     link.href = assets.css;
     link.id = `page-css-${pageId}`;
     
-    // Reveals the form layouts ONLY when the browser confirms the CSS file is downloaded
+    // Reveals the layout ONLY when this specific page's stylesheet is verified downloaded
     link.onload = () => {
       if (layout) {
         requestAnimationFrame(() => {
@@ -195,7 +198,7 @@ function loadPageAssets(pageId) {
     
     document.head.appendChild(link);
   } else if (assets.css && document.getElementById(`page-css-${pageId}`)) {
-    // If the stylesheet is already cached by the browser, reveal the container instantly
+    // If the stylesheet is already cached for this specific page, reveal it instantly
     if (layout) {
       requestAnimationFrame(() => {
         layout.classList.remove("loading");
@@ -220,6 +223,7 @@ function loadPageAssets(pageId) {
     }
   }
 }
+
 
 
 // --------------------------------------------------------------------------
