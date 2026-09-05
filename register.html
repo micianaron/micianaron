@@ -1,4 +1,4 @@
-<div class="split-layout">
+<div class="split-layout loading"> <!-- Added 'loading' class here -->
   <!-- Left side: registration form -->
   <div class="form-side">
     <h1 class="page-title">Partner Registration</h1>
@@ -29,10 +29,29 @@
 
   <!-- Right side: banner image with visible border -->
   <div class="banner-side">
-    <img
-      src="assets/images/register-banner.png"
-      alt="Registration banner"
-      onerror="this.onerror=null; this.src='assets/images/dark-logo.png';"
-    />
+    <img src="assets/images/register-banner.png" alt="Registration banner" onerror="this.onerror=null; this.src='assets/images/dark-logo.png';" />
   </div>
 </div>
+
+<!-- Initialization Script to prevent the flex/height layout glitch -->
+<script>
+  (function() {
+    const initializeLayout = () => {
+      const layout = document.querySelector(".split-layout");
+      if (layout) {
+        // requestAnimationFrame lets the browser compute layout dimensions first
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            layout.classList.remove("loading");
+          }, 60); // 60ms delay ensures form elements and heights completely stabilize
+        });
+      }
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initializeLayout);
+    } else {
+      initializeLayout();
+    }
+  })();
+</script>
