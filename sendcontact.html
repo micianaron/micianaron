@@ -1,4 +1,4 @@
-<div class="split-layout loading"> <!-- Added 'loading' class here -->
+<div class="split-layout">
   <!-- Left side: contact form -->
   <div class="form-side">
     <h1 class="page-title">Send a Message</h1>
@@ -13,7 +13,7 @@
       </div>
       <div class="form-group">
         <label>Detailed Message</label>
-        <textarea id="contactMessage" rows="6" placeholder="Write your message..." required></textarea>
+        <textarea id="contactMessage" style="height: 150px;" placeholder="Write your message..." required></textarea>
       </div>
       <button type="submit" class="hero-btn-span contact-form-button">Send Message</button>
     </form>
@@ -21,33 +21,6 @@
 
   <!-- Right side: banner image with visible border -->
   <div class="banner-side">
-    <img
-      src="assets/images/contact-banner.png"
-      alt="Contact banner"
-      onerror="this.onerror=null; this.src='assets/images/dark-logo.png';"
-    />
+    <img src="assets/images/contact-banner.png" alt="Contact banner" onerror="this.onerror=null; this.src='assets/images/dark-logo.png';" />
   </div>
 </div>
-
-<!-- Initialization Script to prevent the flex/height layout glitch -->
-<script>
-  (function() {
-    const initializeLayout = () => {
-      const layout = document.querySelector(".split-layout");
-      if (layout) {
-        // requestAnimationFrame lets the browser compute layout dimensions first
-        requestAnimationFrame(() => {
-          setTimeout(() => {
-            layout.classList.remove("loading");
-          }, 60); // 60ms delay ensures form elements and heights completely stabilize
-        });
-      }
-    };
-
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initializeLayout);
-    } else {
-      initializeLayout();
-    }
-  })();
-</script>
