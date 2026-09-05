@@ -1,4 +1,4 @@
-<div class="split-layout">
+<div class="split-layout loading"> <!-- Added 'loading' class here -->
   <!-- Left side: contact form -->
   <div class="form-side">
     <h1 class="page-title">Send a Message</h1>
@@ -28,3 +28,26 @@
     />
   </div>
 </div>
+
+<!-- Initialization Script to prevent the flex/height layout glitch -->
+<script>
+  (function() {
+    const initializeLayout = () => {
+      const layout = document.querySelector(".split-layout");
+      if (layout) {
+        // requestAnimationFrame lets the browser compute layout dimensions first
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            layout.classList.remove("loading");
+          }, 60); // 60ms delay ensures form elements and heights completely stabilize
+        });
+      }
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initializeLayout);
+    } else {
+      initializeLayout();
+    }
+  })();
+</script>
